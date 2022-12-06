@@ -20,6 +20,19 @@ public class InsertNodeBeginning {
        length = 0;
     }
 
+
+    private void display() {
+        ListNode temp = last.next;
+        if (last == null){
+            return;
+        }while (temp != last){
+            System.out.print(temp.data+"-->");
+            temp = temp.next;
+        }
+        System.out.println(temp.data+"-->");
+    }
+
+    // TODO: 12/6/2022 INSERT NODE AT THE BEGINNING OF A CIRCULAR LINKED LIST
     public void insertFirst(int data){
         ListNode temp = new ListNode(data);
         if (last == null){
@@ -47,16 +60,5 @@ public class InsertNodeBeginning {
         circularLink.display();
         circularLink.insertFirst(190);
         circularLink.display();
-    }
-
-    private void display() {
-        ListNode temp = last.next;
-        if (last == null){
-            return;
-        }while (temp != last){
-            System.out.print(temp.data+"-->");
-            temp = temp.next;
-        }
-        System.out.println(temp.data+"-->");
     }
 }
