@@ -33,6 +33,17 @@ public class CircularLinkedList {
         return length == 0;
     }
 
+    public void display(){
+        ListNode current = last;
+        if (last == null){
+            return;
+        }while (current != null){
+            System.out.print(current.data+"-->");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
     public void createCircularLinkedList(){
         ListNode first = new ListNode(1);
         ListNode second = new ListNode(2);
@@ -48,8 +59,10 @@ public class CircularLinkedList {
         last = fourth;
     }
 
+    // TODO: 12/5/2022 PRINT THE ELEMENTS IN THE CIRCULAR LINKED LIST 
     public static void main(String[] args) {
         CircularLinkedList cll = new CircularLinkedList();
         cll.createCircularLinkedList();
+        cll.display();
     }
 }
