@@ -51,10 +51,10 @@ public class CircularLinkedList {
         }
         ListNode first = last.next;
         while(first != last){
-            System.out.println(first.data+" ");
+            System.out.print(first.data+"-->");
             first = first.next;
         }
-        System.out.println(first.data+" ");
+        System.out.println(first.data+"");
     }
 
     public void createCircularLinkedList(){
@@ -66,7 +66,7 @@ public class CircularLinkedList {
         first.next = second;
         second.next = third;
         third.next = fourth;
-        fourth.next = first; //last node,,fourth, points to firstNode
+        fourth.next = first; //the lastNode, fourth, points to firstNode
 
         //Assign the value of fourth to LastNode ie. last
         last = fourth;
