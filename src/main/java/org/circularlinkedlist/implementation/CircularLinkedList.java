@@ -44,6 +44,19 @@ public class CircularLinkedList {
         System.out.println("null");
     }
 
+    //THE CORRECT IMPLEMENTATION OF DISPLAY METHOD
+    public void circularDisplay(){
+        if (last == null){
+            return;
+        }
+        ListNode first = last.next;
+        while(first != last){
+            System.out.println(first.data+" ");
+            first = first.next;
+        }
+        System.out.println(first.data+" ");
+    }
+
     public void createCircularLinkedList(){
         ListNode first = new ListNode(1);
         ListNode second = new ListNode(2);
@@ -63,6 +76,7 @@ public class CircularLinkedList {
     public static void main(String[] args) {
         CircularLinkedList cll = new CircularLinkedList();
         cll.createCircularLinkedList();
-        cll.display();
+        //cll.display(); //THIS DISPLAYS IN A NEVER ENDING LOOP
+        cll.circularDisplay(); //THIS DISPLAYS THE ELEMENTS ONLY WITHOUT LOOPING
     }
 }
